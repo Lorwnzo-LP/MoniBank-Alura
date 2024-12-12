@@ -3,21 +3,20 @@ import maiorDeIdade from "./valida-idade.js";
 const camposDoFormulario = document.querySelectorAll("[required]");
 const formulario = document.querySelector("[data-formulario]");
 
-formulario.addEventListener("submit", (e) => {
+formulario.addEventListener("submit", (e) =>{
     e.preventDefault();
 
-    const listaRespostas = {
+    const cadastroLocal = {
         "nome": e.target.elements["nome"].value,
         "email": e.target.elements["email"].value,
         "rg": e.target.elements["rg"].value,
         "cpf": e.target.elements["cpf"].value,
         "aniversario": e.target.elements["aniversario"].value,
-
     }
 
-    localStorage.setItem("cadastro", JSON.stringify(listaRespostas));
+    localStorage.setItem("cadastro", JSON.stringify(cadastroLocal));
 
-    window.location.href = './abrir-conta-form-2.html';
+    window.location.href = './abrir-conta-form-2.html'
 })
 
 camposDoFormulario.forEach((campo) => {
